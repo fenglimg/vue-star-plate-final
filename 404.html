@@ -23,6 +23,29 @@
   <!-- 预加载关键CSS -->
   <script type="module" crossorigin src="/vue-star-plate-final/assets/index-enANuxn4.js"></script>
   <link rel="stylesheet" crossorigin href="/vue-star-plate-final/assets/index-DrMFWyHX.css">
+
+  <!-- GitHub Pages SPA 路由处理 -->
+  <script>
+    // GitHub Pages SPA 路由重定向脚本
+    (function (l) {
+      if (l.search[1] === '/') {
+        var decoded = l.search.slice(1).split('&').map(function (s) {
+          return s.replace(/~and~/g, '&')
+        }).join('?')
+        window.history.replaceState(null, null,
+          l.pathname.slice(0, -1) + decoded + l.hash
+        )
+      }
+    }(window.location))
+  </script>
+
+  <!-- 添加调试信息 -->
+  <script>
+    console.log('404.html loaded');
+    console.log('Current location:', window.location.href);
+    console.log('Pathname:', window.location.pathname);
+    console.log('Search:', window.location.search);
+  </script>
 </head>
 
 <body>
