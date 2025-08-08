@@ -23,6 +23,24 @@
   <!-- 预加载关键CSS -->
   <script type="module" crossorigin src="/vue-star-plate-final/assets/index-enANuxn4.js"></script>
   <link rel="stylesheet" crossorigin href="/vue-star-plate-final/assets/index-DrMFWyHX.css">
+
+  <!-- 添加调试信息 -->
+  <script>
+    console.log('index.html loaded');
+    console.log('Current location:', window.location.href);
+    console.log('Base URL:', '/vue-star-plate-final/');
+
+    // 检查资源加载
+    window.addEventListener('load', function () {
+      console.log('Page fully loaded');
+      console.log('App element:', document.getElementById('app'));
+    });
+
+    // 检查错误
+    window.addEventListener('error', function (e) {
+      console.error('Resource loading error:', e.target.src || e.target.href, e);
+    });
+  </script>
 </head>
 
 <body>
