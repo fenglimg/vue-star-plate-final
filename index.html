@@ -21,26 +21,33 @@
     rel="stylesheet">
 
   <!-- 预加载关键CSS -->
-  <script type="module" crossorigin src="/vue-star-plate-final/assets/index-enANuxn4.js"></script>
-  <link rel="stylesheet" crossorigin href="/vue-star-plate-final/assets/index-DrMFWyHX.css">
 
-  <!-- 添加调试信息 -->
+  <!-- GitHub Pages SPA 路由支持 -->
   <script>
+    // 检查是否有重定向路径
+    (function () {
+      var redirect = sessionStorage.getItem('redirect');
+      if (redirect) {
+        sessionStorage.removeItem('redirect');
+        history.replaceState(null, null, redirect);
+        console.log('Redirected to:', redirect);
+      }
+    })();
+
+    // 调试信息
     console.log('index.html loaded');
     console.log('Current location:', window.location.href);
-    console.log('Base URL:', '/vue-star-plate-final/');
+    console.log('Base URL:', document.querySelector('base')?.href || 'No base tag');
 
-    // 检查资源加载
+    // 页面加载完成后的调试信息
     window.addEventListener('load', function () {
       console.log('Page fully loaded');
       console.log('App element:', document.getElementById('app'));
-    });
-
-    // 检查错误
-    window.addEventListener('error', function (e) {
-      console.error('Resource loading error:', e.target.src || e.target.href, e);
+      console.log('Router base:', window.location.pathname);
     });
   </script>
+  <script type="module" crossorigin src="/vue-star-plate-final/assets/index-QM1UjxJM.js"></script>
+  <link rel="stylesheet" crossorigin href="/vue-star-plate-final/assets/index-DrMFWyHX.css">
 </head>
 
 <body>
